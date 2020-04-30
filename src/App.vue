@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <b-container fluid="lg" id="app">
     <appHeader />
     <router-view :key="$route.fullPath" />
     <!-- fixed tabs -->
-    <Breadcrumb />
+    <appBreadcrumb />
     <appFooter />
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ import Footer from '@/components/footer/Footer.vue'
 export default {
   components: {
     appHeader: Header,
-    Breadcrumb,
+    appBreadcrumb: Breadcrumb,
     appFooter: Footer
   }
 }
@@ -24,4 +24,9 @@ export default {
 
 <style lang="scss">
 @import './styles/styles.scss';
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <header>
     <headerTop />
     <headerNav />
-  </div>
+  </header>
 </template>
 
 <script>

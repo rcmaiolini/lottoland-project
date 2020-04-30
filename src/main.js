@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Buefy from 'buefy'
+import { BootstrapVue } from 'bootstrap-vue'
 
-Vue.use(Buefy)
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 

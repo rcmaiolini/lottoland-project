@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <footer>
     <footerTrust />
     <footerLinks />
     <footerPayments />
     <footerDownload />
     <footerSigns />
-  </div>
+  </footer>
 </template>
 
 <script>

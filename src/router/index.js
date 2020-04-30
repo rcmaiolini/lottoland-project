@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ResultsWinningNumbers from '../views/eurojackpot/ResultsWinningNumbers.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +7,10 @@ const routes = [
   {
     path: '/eurojackpot/results-winning-numbers',
     name: 'results-winning-numbers',
-    component: ResultsWinningNumbers
+    component: () =>
+      import(
+        /* webpackChunkName: "results-winning-numbers" */ '../views/eurojackpot/ResultsWinningNumbers.vue'
+      )
   },
   {
     path: '/',

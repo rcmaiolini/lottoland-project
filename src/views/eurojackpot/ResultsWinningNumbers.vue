@@ -1,5 +1,6 @@
 <template>
   <div>
+    results-winning-numbers page
     <!-- submenu -->
     <!-- page title -->
     <!-- inputs date -->
