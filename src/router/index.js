@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import ResultsWinningNumbers from '../views/eurojackpot/ResultsWinningNumbers.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/eurojackpot/results-winning-numbers',
+    name: 'results-winning-numbers',
+    component: ResultsWinningNumbers
+  },
+  {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/eurojackpot/results-winning-numbers'
   }
 ]
 
