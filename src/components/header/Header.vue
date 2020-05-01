@@ -19,7 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .header-container {
-  background: #fff;
   width: 100%;
   display: block;
   position: fixed;

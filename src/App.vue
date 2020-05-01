@@ -28,6 +28,6 @@ export default {
 @import './styles/styles.scss';
 
 #app {
-  padding-top: 118px;
+  padding-top: 120px;
 }
 </style>

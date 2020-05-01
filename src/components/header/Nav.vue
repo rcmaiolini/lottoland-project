@@ -60,6 +60,8 @@ export default {}
 <style lang="scss" scoped>
 .nav-background {
   background: $gradient-background;
+  position: fixed;
+  width: 100%;
 }
 
 .nav-item {
