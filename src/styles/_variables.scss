@@ -1,15 +1,22 @@
+// colors
+$black: #000000;
+$white: #ffffff;
+
+$green-0: #a4cc25;
+$green-1: #c3dc41;
+$green-2: #9cb034;
+$green-3: #a4cc25;
+$green-4: #64a407;
+$green-5: #97bd00;
 $base-green: #69a507;
 $dark-green: #012406;
 
-$featured: #9d196b;
-$highlight: #ca7f26;
+$yellow: #FFE066;
+$orange: #ca7f26;
+$purple: #9d196b;
 
-$link-hover: #c3dc41;
-$link-active: #FFE066;
+$light-gray: #999999;
+$dark-gray: #535353;
 
-$link-active-text: #535353;
-$link-inactive-text: #97bd00;
-
-$gradient-background: linear-gradient(90deg, #a4cc25, #64a407)
-
-
+// nav background
+$gradient-background: linear-gradient(90deg, $green-3, $green-4);
