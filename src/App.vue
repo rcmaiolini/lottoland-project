@@ -1,11 +1,13 @@
 <template>
-  <b-container fluid="lg" id="app">
+  <div id="app">
     <appHeader />
-    <router-view :key="$route.fullPath" />
+    <b-container>
+      <router-view :key="$route.fullPath" />
+      <appBreadcrumb />
+    </b-container>
     <!-- fixed tabs -->
-    <appBreadcrumb />
     <appFooter />
-  </b-container>
+  </div>
 </template>
 
 <script>
@@ -26,7 +28,6 @@ export default {
 @import './styles/styles.scss';
 
 #app {
-  max-width: 960px;
-  margin: 0 auto;
+  padding-top: 118px;
 }
 </style>
