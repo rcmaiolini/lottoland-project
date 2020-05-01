@@ -11,12 +11,57 @@ const routes = [
       import(/* webpackChunkName: "powerball" */ '../views/PowerBall.vue')
   },
   {
-    path: '/eurojackpot/results-winning-numbers',
-    name: 'results-winning-numbers',
+    path: '/eurojackpot',
     component: () =>
       import(
-        /* webpackChunkName: "results-winning-numbers" */ '../views/eurojackpot/ResultsWinningNumbers.vue'
-      )
+        /* webpackChunkName: "eurojackpotmain" */ '../views/eurojackpot/EuroJackpotMain.vue'
+      ),
+    children: [
+      {
+        path: '',
+        name: 'eurojackpotmain',
+        redirect: { name: 'eurojackpot' }
+      },
+      {
+        path: 'eurojackpot',
+        name: 'eurojackpot',
+        component: () =>
+          import(
+            /* webpackChunkName: "eurojackpot" */ '../views/eurojackpot/EuroJackpot.vue'
+          ),
+        meta: {
+          breadcrumb: [{ name: 'Euro Jackpot' }]
+        }
+      },
+      {
+        path: 'results-winning-numbers',
+        name: 'results-winning-numbers',
+        component: () =>
+          import(
+            /* webpackChunkName: "results-winning-numbers" */ '../views/eurojackpot/ResultsWinningNumbers.vue'
+          ),
+        meta: {
+          breadcrumb: [
+            { name: 'Euro Jackpot', link: '/eurojackpot' },
+            { name: 'Results Winning Numbers' }
+          ]
+        }
+      },
+      {
+        path: 'help',
+        name: 'help',
+        component: () =>
+          import(
+            /* webpackChunkName: "help" */ '../views/eurojackpot/Help.vue'
+          ),
+        meta: {
+          breadcrumb: [
+            { name: 'Euro Jackpot', link: '/eurojackpot' },
+            { name: 'Help' }
+          ]
+        }
+      }
+    ]
   },
   {
     path: '/',
@@ -63,7 +108,9 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exact-active'
 })
 
 export default router

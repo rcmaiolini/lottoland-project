@@ -1,51 +1,31 @@
 <template>
   <section class="nav-background">
     <b-nav align="center">
-      <b-nav-item :to="{ name: 'powerball' }" exact exact-active-class="active">
+      <b-nav-item :to="{ name: 'powerball' }">
         <div class="hot-label">BOOSTED JACKPOT</div>
         PowerBall
       </b-nav-item>
-      <b-nav-item
-        :to="{ name: 'results-winning-numbers' }"
-        exact
-        exact-active-class="active"
-      >
+      <b-nav-item :to="{ name: 'eurojackpotmain' }">
         <div class="hot-label">€90 MILLION</div>
         EuroJackpot
       </b-nav-item>
-      <b-nav-item
-        :to="{ name: 'euromillions' }"
-        exact
-        exact-active-class="active"
-      >
+      <b-nav-item :to="{ name: 'euromillions' }">
         EuroMillions
       </b-nav-item>
-      <b-nav-item :to="{ name: 'lotteries' }" exact exact-active-class="active">
+      <b-nav-item :to="{ name: 'lotteries' }" exact>
         More Jackpots
       </b-nav-item>
-      <b-nav-item
-        :to="{ name: 'promotions' }"
-        exact
-        exact-active-class="active"
-      >
+      <b-nav-item :to="{ name: 'promotions' }">
         <div class="hot-label">LATEST DEALS</div>
         Promotions
       </b-nav-item>
-      <b-nav-item
-        :to="{ name: 'scratchcards' }"
-        exact
-        exact-active-class="active"
-      >
+      <b-nav-item :to="{ name: 'scratchcards' }">
         Scratchcards
       </b-nav-item>
-      <b-nav-item
-        :to="{ name: 'instantwin' }"
-        exact
-        exact-active-class="active"
-      >
+      <b-nav-item :to="{ name: 'instantwin' }">
         Instant Win
       </b-nav-item>
-      <b-nav-item :to="{ name: 'games' }" exact exact-active-class="active">
+      <b-nav-item :to="{ name: 'games' }">
         <div class="hot-label">POPULAR</div>
         Games
       </b-nav-item>

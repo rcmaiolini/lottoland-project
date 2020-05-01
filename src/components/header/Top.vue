@@ -5,7 +5,7 @@
       type="light"
       variant="light"
       fixed="top"
-      sticky="true"
+      :sticky="true"
     >
       <b-navbar-brand href="/">
         <img src="@/assets/lottoland-logo.svg" alt="LottoLand" />
