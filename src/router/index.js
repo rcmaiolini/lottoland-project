@@ -44,7 +44,8 @@ const routes = [
           breadcrumb: [
             { name: 'Euro Jackpot', link: '/eurojackpot' },
             { name: 'Results Winning Numbers' }
-          ]
+          ],
+          title: 'EuroJackpot - check the official results and winning numbers'
         }
       },
       {
@@ -111,6 +112,11 @@ const router = new VueRouter({
   routes,
   linkActiveClass: 'active',
   linkExactActiveClass: 'exact-active'
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
 })
 
 export default router
