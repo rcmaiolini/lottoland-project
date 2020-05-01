@@ -8,7 +8,10 @@ const routes = [
     path: '/powerball',
     name: 'powerball',
     component: () =>
-      import(/* webpackChunkName: "powerball" */ '../views/PowerBall.vue')
+      import(/* webpackChunkName: "powerball" */ '../views/PowerBall.vue'),
+    meta: {
+      title: 'Play Powerball online at Lottoland.com'
+    }
   },
   {
     path: '/eurojackpot',
@@ -30,7 +33,8 @@ const routes = [
             /* webpackChunkName: "eurojackpot" */ '../views/eurojackpot/EuroJackpot.vue'
           ),
         meta: {
-          breadcrumb: [{ name: 'Euro Jackpot' }]
+          breadcrumb: [{ name: 'Euro Jackpot' }],
+          title: 'Play EuroJackpot lottery online !'
         }
       },
       {
@@ -59,7 +63,8 @@ const routes = [
           breadcrumb: [
             { name: 'Euro Jackpot', link: '/eurojackpot' },
             { name: 'Help' }
-          ]
+          ],
+          title: 'EuroJackpot Help & FAQ - Lottoland.com'
         }
       }
     ]
@@ -72,37 +77,59 @@ const routes = [
     path: '/euromillions',
     name: 'euromillions',
     component: () =>
-      import(/* webpackChunkName: "euromillions" */ '../views/EuroMillions.vue')
+      import(
+        /* webpackChunkName: "euromillions" */ '../views/EuroMillions.vue'
+      ),
+    meta: {
+      title: 'Play EuroMillions lottery online!'
+    }
   },
   {
     path: '/lotteries',
     name: 'lotteries',
     component: () =>
-      import(/* webpackChunkName: "lotteries" */ '../views/MoreJackpots.vue')
+      import(/* webpackChunkName: "lotteries" */ '../views/MoreJackpots.vue'),
+    meta: {
+      title: 'Lottery Comparison'
+    }
   },
   {
     path: '/promotions',
     name: 'promotions',
     component: () =>
-      import(/* webpackChunkName: "promotions" */ '../views/Promotions.vue')
+      import(/* webpackChunkName: "promotions" */ '../views/Promotions.vue'),
+    meta: {
+      title: 'Promotions - Lottoland.com'
+    }
   },
   {
     path: '/scratchcards',
     name: 'scratchcards',
     component: () =>
-      import(/* webpackChunkName: "scratchcards" */ '../views/Scratchcards.vue')
+      import(
+        /* webpackChunkName: "scratchcards" */ '../views/Scratchcards.vue'
+      ),
+    meta: {
+      title: 'Scratchcards online at Lottoland.com'
+    }
   },
   {
     path: '/instantwin',
     name: 'instantwin',
     component: () =>
-      import(/* webpackChunkName: "instantwin" */ '../views/InstantWin.vue')
+      import(/* webpackChunkName: "instantwin" */ '../views/InstantWin.vue'),
+    meta: {
+      title: 'International lotteries online at Lottoland.com'
+    }
   },
   {
     path: '/games',
     name: 'games',
     component: () =>
-      import(/* webpackChunkName: "games" */ '../views/Games.vue')
+      import(/* webpackChunkName: "games" */ '../views/Games.vue'),
+    meta: {
+      title: 'International lotteries online at Lottoland.com'
+    }
   }
 ]
 

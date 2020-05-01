@@ -1,31 +1,30 @@
 <template>
   <div>
-    <b-button-group size="md" class="mt-5 mb-3 mt-sm-5 mt-md-3">
-      <b-button variant="light" :to="{ name: 'eurojackpot' }"
-        >EuroJackpot</b-button
-      >
-      <b-button variant="light" :to="{ name: 'results-winning-numbers' }"
-        >EuroJackpot Results & Prize Breakdown</b-button
-      >
-      <b-button variant="light" :to="{ name: 'help' }"
-        >EuroJackpot Help & FAQ</b-button
-      >
-    </b-button-group>
-    <router-view :key="$route.fullPath" />
+    <SubMenu :menuOptions="subMenu" />
+    <router-view />
   </div>
 </template>
 
 <script>
-export default {}
-</script>
+import SubMenu from '@/components/common/SubMenu.vue'
 
-<style lang="scss" scoped>
-.btn-group {
-  width: 100%;
-
-  .btn {
-    width: 33%;
-    font-size: 12px;
+export default {
+  components: {
+    SubMenu
+  },
+  data() {
+    return {
+      subMenu: [
+        { name: 'EuroJackpot', route: 'eurojackpot' },
+        {
+          name: 'EuroJackpot Results & Prize Breakdown',
+          route: 'results-winning-numbers'
+        },
+        { name: 'EuroJackpot Help & FAQ', route: 'help' }
+      ]
+    }
   }
 }
-</style>
+</script>
+
+<style lang="scss" scoped></style>
