@@ -1,9 +1,15 @@
 <template>
-  <div>Instant Win</div>
+  <Sample pageName="Instant Win" />
 </template>
 
 <script>
-export default {}
+import Sample from '../components/Sample'
+
+export default {
+  components: {
+    Sample
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>

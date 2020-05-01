@@ -1,9 +1,15 @@
 <template>
-  <div>More Jackpots</div>
+  <Sample pageName="More Jackpots" />
 </template>
 
 <script>
-export default {}
+import Sample from '../components/Sample'
+
+export default {
+  components: {
+    Sample
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>

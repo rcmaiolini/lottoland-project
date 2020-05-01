@@ -1,9 +1,15 @@
 <template>
-  <div>Promotions</div>
+  <Sample pageName="Promotions" />
 </template>
 
 <script>
-export default {}
+import Sample from '../components/Sample'
+
+export default {
+  components: {
+    Sample
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>

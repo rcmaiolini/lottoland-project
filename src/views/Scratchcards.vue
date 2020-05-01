@@ -1,9 +1,15 @@
 <template>
-  <div>Scratchcards</div>
+  <Sample pageName="Scratch Cards" />
 </template>
 
 <script>
-export default {}
+import Sample from '../components/Sample'
+
+export default {
+  components: {
+    Sample
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>
