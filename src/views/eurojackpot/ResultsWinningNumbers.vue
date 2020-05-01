@@ -1,6 +1,6 @@
 <template>
   <div>
-    results-winning-numbers page
+    <h1>EUROJACKPOT RESULTS & WINNING NUMBERS</h1>
     <!-- submenu -->
     <!-- page title -->
     <!-- inputs date -->
@@ -14,3 +14,9 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss" scoped>
+h1 {
+  color: $dark-green;
+}
+</style>
