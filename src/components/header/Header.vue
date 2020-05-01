@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header-container">
     <headerTop />
     <headerNav />
   </header>
@@ -17,4 +17,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header-container {
+  background: #fff;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+</style>
