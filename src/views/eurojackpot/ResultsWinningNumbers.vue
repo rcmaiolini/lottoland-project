@@ -154,6 +154,9 @@ export default {
         extra: ['1', '2']
       }
     }
+  },
+  created() {
+    this.$store.dispatch('getWinningNumbers')
   }
 }
 </script>
