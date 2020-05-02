@@ -7,6 +7,8 @@
     <!-- result date -->
     <!-- numbers -->
 
+    <lotteryNumber :jackpot="jackpotData" />
+
     <b-row>
       <b-col sm="12" md="7" lg="8">
         <b-table-simple responsive>
@@ -135,12 +137,23 @@
 import PageTitle from '@/components/common/PageTitle.vue'
 import ComboDateYear from '@/components/common/ComboDateYear.vue'
 import CardText from '@/components/common/CardText.vue'
+import lotteryNumber from '@/components/common/LotteryNumber.vue'
 
 export default {
   components: {
     PageTitle,
     ComboDateYear,
-    CardText
+    CardText,
+    lotteryNumber
+  },
+  data() {
+    return {
+      jackpotData: {
+        date: 'Friday 01 May 2020',
+        numbers: ['6', '11', '12', '21', '41'],
+        extra: ['1', '2']
+      }
+    }
   }
 }
 </script>
