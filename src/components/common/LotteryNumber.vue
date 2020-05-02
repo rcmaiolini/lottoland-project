@@ -1,7 +1,8 @@
 <template>
   <div>
     <p class="heading">
-      <span>EuroJackpot</span> Results for {{ jackpot.date }}
+      <span>EuroJackpot</span> Results for
+      {{ jackpot.date }}
     </p>
     <ul class="lottery">
       <li class="number" v-for="num in jackpot.numbers" :key="num">

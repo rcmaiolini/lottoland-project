@@ -6715,6 +6715,11 @@ mkdirp@~1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
+moment@^2.25.1:
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.1.tgz#1cb546dca1eccdd607c9324747842200b683465d"
+  integrity sha512-nRKMf9wDS4Fkyd0C9LXh2FFXinD+iwbJ5p/lh3CHitW9kZbRbJ8hCruiadiIXZVbeAqKZzqcTvHnK3mRhFjb6w==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7043,6 +7048,11 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+
+numeral@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/numeral/-/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
+  integrity sha1-StCAk21EPCVhrtnyGX7//iX05QY=
 
 nwsapi@^2.0.7, nwsapi@^2.2.0:
   version "2.2.0"
@@ -10005,6 +10015,18 @@ vue-loader@^15.9.1:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-nl2br@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-nl2br/-/vue-nl2br-0.1.2.tgz#ee5c3258d3333cc1053b8668b02ff87b1f40419e"
+  integrity sha512-QMNwuEo9HcpjxR5QXVb6Nu2dyY1O6GKXNIwGcQmqVdayk/F9ke2drEi3iLxZ/sfboimHOzuGWcuYnHtqhQaBkg==
+
+vue-numeral-filter@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-numeral-filter/-/vue-numeral-filter-1.1.1.tgz#dc717c7d86cb10d2fc370ef992bcac80fb9fc666"
+  integrity sha512-QRrvadev2W0PRWHJbLsnOGq4eK0CQmfdyIFy+A4J8dxPNYe1W1W/AqNLFH7paV0lh0pvVPVczgXuOvA/X12T1A==
+  dependencies:
+    numeral "^2.0.6"
 
 vue-router@^3.1.6:
   version "3.1.6"

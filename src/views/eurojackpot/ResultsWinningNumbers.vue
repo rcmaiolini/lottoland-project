@@ -23,9 +23,9 @@
           <b-tbody>
             <b-tr v-for="(win, index) in jackpotWinners" :key="index">
               <b-td>{{ (index + 1) | toRoman }}</b-td>
-              <b-td>{{ win.specialPrize }}</b-td>
-              <b-td>{{ win.winners }}</b-td>
-              <b-td>{{ win.prize }}</b-td>
+              <b-td><nl2br tag="span" :text="win.match"/></b-td>
+              <b-td>{{ win.winners | numeral('0,0') }}x</b-td>
+              <b-td>€{{ win.prize | numeral('0,0.00') }}</b-td>
             </b-tr>
           </b-tbody>
         </b-table-simple>
@@ -90,13 +90,31 @@ export default {
   },
   async created() {
     await this.getWinningNumbers()
-    this.jackpotData.date = this.getDrawingDate
+    this.jackpotData.date = this.moment(
+      this.getDrawingDate.split(',')[0],
+      'DD.MM.YYYY'
+    ).format('dddd DD MMMM YYYY')
     this.jackpotData.numbers = this.getNumbers
     this.jackpotData.extra = this.getEuroNumbers
-    this.jackpotWinners = this.getWinnersRank
+    this.formatJackpotWinners()
   },
   methods: {
-    ...mapActions(['getWinningNumbers'])
+    ...mapActions(['getWinningNumbers']),
+    formatJackpotWinners() {
+      this.jackpotWinners = this.getWinnersRank
+      this.jackpotWinners[0].match = '5 Numbers +\n2 Euronumbers'
+      this.jackpotWinners[1].match = '5 Numbers +\n1 Euronumber'
+      this.jackpotWinners[2].match = '5 Numbers +\n0 Euronumbers'
+      this.jackpotWinners[3].match = '4 Numbers +\n2 Euronumbers'
+      this.jackpotWinners[4].match = '4 Numbers +\n1 Euronumber'
+      this.jackpotWinners[5].match = '4 Numbers +\n0 Euronumber'
+      this.jackpotWinners[6].match = '3 Numbers +\n2 Euronumbers'
+      this.jackpotWinners[7].match = '2 Numbers +\n2 Euronumbers'
+      this.jackpotWinners[8].match = '3 Numbers +\n1 Euronumber'
+      this.jackpotWinners[9].match = '3 Numbers +\n0 Euronumbers'
+      this.jackpotWinners[10].match = '1 Number +\n2 Euronumbers'
+      this.jackpotWinners[11].match = '2 Numbers +\n1 Euronumber'
+    }
   },
   computed: {
     ...mapGetters([
