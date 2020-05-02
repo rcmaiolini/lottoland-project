@@ -8,7 +8,11 @@ export const getters = {
   getDrawingDate: state => state.lastData.drawingDate,
   getEuroNumbers: state => state.lastData.euroNumbers,
   getNumbers: state => state.lastData.numbers,
-  getWinnersRank: state => Object.values(state.lastData.odds)
+  getWinnersRank: state => {
+    const data = Object.values(state.lastData.odds)
+    data.shift()
+    return data
+  }
 }
 
 export const mutations = {

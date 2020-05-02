@@ -14,90 +14,18 @@
         <b-table-simple responsive>
           <b-thead>
             <b-tr>
-              <b-th sticky-column>Sticky Column Header</b-th>
-              <b-th>Heading 1</b-th>
-              <b-th>Heading 2</b-th>
-              <b-th>Heading 3</b-th>
-              <b-th>Heading 4</b-th>
+              <b-th>Tier</b-th>
+              <b-th>Match</b-th>
+              <b-th>Winners</b-th>
+              <b-th>Amount</b-th>
             </b-tr>
           </b-thead>
           <b-tbody>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th sticky-column>Sticky Column Row Header</b-th>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
-              <b-td>Cell</b-td>
+            <b-tr v-for="(win, index) in jackpotWinners" :key="index">
+              <b-td>{{ (index + 1) | toRoman }}</b-td>
+              <b-td>{{ win.specialPrize }}</b-td>
+              <b-td>{{ win.winners }}</b-td>
+              <b-td>{{ win.prize }}</b-td>
             </b-tr>
           </b-tbody>
         </b-table-simple>
@@ -139,6 +67,10 @@ import ComboDateYear from '@/components/common/ComboDateYear.vue'
 import CardText from '@/components/common/CardText.vue'
 import lotteryNumber from '@/components/common/LotteryNumber.vue'
 
+import { mapGetters, mapActions } from 'vuex'
+
+// import { toRoman } from '../../filters/convertToRoman'
+
 export default {
   components: {
     PageTitle,
@@ -149,14 +81,30 @@ export default {
   data() {
     return {
       jackpotData: {
-        date: 'Friday 01 May 2020',
-        numbers: ['6', '11', '12', '21', '41'],
-        extra: ['1', '2']
-      }
+        date: null,
+        numbers: null,
+        extra: null
+      },
+      jackpotWinners: null
     }
   },
-  created() {
-    this.$store.dispatch('getWinningNumbers')
+  async created() {
+    await this.getWinningNumbers()
+    this.jackpotData.date = this.getDrawingDate
+    this.jackpotData.numbers = this.getNumbers
+    this.jackpotData.extra = this.getEuroNumbers
+    this.jackpotWinners = this.getWinnersRank
+  },
+  methods: {
+    ...mapActions(['getWinningNumbers'])
+  },
+  computed: {
+    ...mapGetters([
+      'getDrawingDate',
+      'getEuroNumbers',
+      'getNumbers',
+      'getWinnersRank'
+    ])
   }
 }
 </script>
