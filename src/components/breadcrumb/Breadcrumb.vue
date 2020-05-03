@@ -40,4 +40,27 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.breadcrumb {
+  background-color: $white;
+
+  .breadcrumb-item {
+    font-size: 12px;
+
+    a {
+      color: $base-green;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover {
+        color: $green-6;
+      }
+    }
+
+    .active {
+      color: $light-gray;
+      font-weight: 200;
+    }
+  }
+}
+</style>
