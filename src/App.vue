@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <appHeader />
+
     <b-container>
       <router-view :key="$route.fullPath" />
       <appBreadcrumb />
     </b-container>
-    <!-- fixed tabs -->
+
     <appFooter />
   </div>
 </template>
