@@ -1,2 +1,16 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
+
+body {
+  font-size: 14px;
+  color: $dark-green;
+}
+
+a {
+  text-decoration: none;
+  color: $base-green;
+
+  &:hover {
+    color: $green-6;
+  }
+}

@@ -48,7 +48,6 @@ export default {
     font-size: 12px;
 
     a {
-      color: $base-green;
       text-decoration: none;
       font-weight: 700;
 

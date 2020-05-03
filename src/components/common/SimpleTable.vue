@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .b-table {
   thead {
-    border: 1px solid $lighter-gray;
+    border: $default-border;
 
     th {
       color: $dark-green;
@@ -41,11 +41,11 @@ export default {
   }
 
   tbody {
-    border: 1px solid $lighter-gray;
+    border: $default-border;
     line-height: 1;
 
     tr {
-      border: 1px solid $lighter-gray;
+      border: $default-border;
 
       td {
         font-size: 14px;

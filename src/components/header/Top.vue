@@ -8,7 +8,7 @@
       :sticky="true"
     >
       <b-navbar-brand href="/">
-        <img src="@/assets/lottoland-logo.svg" alt="LottoLand" />
+        <img src="@/assets/images/lottoland-logo.svg" alt="LottoLand" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -79,7 +79,6 @@ export default {}
       position: relative;
       display: inline;
       line-height: 21px;
-      font-size: 14px;
 
       &:hover {
         color: $green-6;

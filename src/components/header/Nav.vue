@@ -64,7 +64,6 @@ export default {}
   display: inline-block;
   font-size: 13px;
   text-decoration: none;
-  font-family: KievitWebProBold, Helvetica Neue, Helvetica, Arial, sans-serif;
   text-align: center;
   text-shadow: 1px 1px 0 $light-gray;
   position: relative;
@@ -84,7 +83,6 @@ export default {}
   position: absolute;
   text-shadow: none;
   font-size: 8px;
-  font-family: Arial, sans-serif;
   color: $white;
   background-color: $purple;
   top: 0;

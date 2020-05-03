@@ -32,7 +32,6 @@ export default {
   font-weight: 200;
   text-transform: none;
   font-size: 17px;
-  color: $dark-green;
   margin: 0;
 
   span {
@@ -41,8 +40,6 @@ export default {
 }
 
 .lottery {
-  font-size: 14px;
-  color: $dark-green;
   list-style: none;
   padding: 0;
   margin-bottom: 0;
@@ -55,7 +52,7 @@ export default {
     font-size: 17px;
     line-height: 35px;
     text-align: center;
-    border: 1px solid $lighter-gray;
+    border: $default-border;
     border-radius: 50%;
     margin-right: 7px;
     margin-bottom: 7px;

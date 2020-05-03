@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
 header {
   align-items: center;
-  border-bottom: 1px solid $lighter-gray;
+  border-bottom: $default-border;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
