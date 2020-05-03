@@ -18,7 +18,10 @@
 </template>
 
 <script>
+import bindImagesMixins from '../../mixins/bindImagesMixins'
+
 export default {
+  mixins: [bindImagesMixins],
   data() {
     return {
       images: [
@@ -51,12 +54,6 @@ export default {
           link: 'https://www.lottoland.com/en/lotto-betting'
         }
       ]
-    }
-  },
-  methods: {
-    bindImages(name) {
-      var images = require.context('@/assets/images/', false, /\.png$/)
-      return images('./' + name + '.png')
     }
   }
 }

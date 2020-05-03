@@ -46,13 +46,10 @@
 </template>
 
 <script>
+import bindImagesMixins from '../../mixins/bindImagesMixins'
+
 export default {
-  methods: {
-    bindImages(name) {
-      var images = require.context('@/assets/images/', false, /\.png$/)
-      return images('./' + name + '.png')
-    }
-  }
+  mixins: [bindImagesMixins]
 }
 </script>
 
