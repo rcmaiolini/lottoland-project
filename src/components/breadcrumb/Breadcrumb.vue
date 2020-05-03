@@ -48,7 +48,6 @@ export default {
     font-size: 12px;
 
     a {
-      text-decoration: none;
       font-weight: 700;
 
       &:hover {

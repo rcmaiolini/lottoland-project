@@ -11,6 +11,11 @@ a {
   color: $base-green;
 
   &:hover {
+    text-decoration: none;
     color: $green-6;
   }
+}
+
+li {
+  list-style: none;
 }
