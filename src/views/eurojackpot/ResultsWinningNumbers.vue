@@ -3,32 +3,15 @@
     <PageTitle title="EUROJACKPOT RESULTS & WINNING NUMBERS">
       <ComboDateYear />
     </PageTitle>
-    <!-- inputs date -->
-    <!-- result date -->
-    <!-- numbers -->
 
     <lotteryNumber :jackpot="jackpotData" />
 
     <b-row>
       <b-col sm="12" md="7" lg="8">
-        <b-table-simple responsive>
-          <b-thead>
-            <b-tr>
-              <b-th>Tier</b-th>
-              <b-th>Match</b-th>
-              <b-th>Winners</b-th>
-              <b-th>Amount</b-th>
-            </b-tr>
-          </b-thead>
-          <b-tbody>
-            <b-tr v-for="(win, index) in jackpotWinners" :key="index">
-              <b-td>{{ (index + 1) | toRoman }}</b-td>
-              <b-td><nl2br tag="span" :text="win.match"/></b-td>
-              <b-td>{{ win.winners | numeral('0,0') }}x</b-td>
-              <b-td>€{{ win.prize | numeral('0,0.00') }}</b-td>
-            </b-tr>
-          </b-tbody>
-        </b-table-simple>
+        <SimpleTable
+          :tableHead="jackpotWinnersHead"
+          :tableBody="jackpotWinners"
+        />
       </b-col>
 
       <b-col m="12" md="5" lg="4">
@@ -66,17 +49,17 @@ import PageTitle from '@/components/common/PageTitle.vue'
 import ComboDateYear from '@/components/common/ComboDateYear.vue'
 import CardText from '@/components/common/CardText.vue'
 import lotteryNumber from '@/components/common/LotteryNumber.vue'
+import SimpleTable from '@/components/common/SimpleTable.vue'
 
 import { mapGetters, mapActions } from 'vuex'
-
-// import { toRoman } from '../../filters/convertToRoman'
 
 export default {
   components: {
     PageTitle,
     ComboDateYear,
     CardText,
-    lotteryNumber
+    lotteryNumber,
+    SimpleTable
   },
   data() {
     return {
@@ -85,10 +68,11 @@ export default {
         numbers: null,
         extra: null
       },
-      jackpotWinners: null
+      jackpotWinners: null,
+      jackpotWinnersHead: ['Tier', 'Match', 'Winners', 'Amount']
     }
   },
-  async created() {
+  async beforeMount() {
     await this.getWinningNumbers()
     this.jackpotData.date = this.moment(
       this.getDrawingDate.split(',')[0],

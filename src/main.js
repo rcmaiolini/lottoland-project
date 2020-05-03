@@ -13,6 +13,7 @@ Vue.use(BootstrapVue)
 Vue.use(vueNumeralFilter)
 Vue.filter('toRoman', toRoman)
 Vue.component('nl2br', Nl2br)
+
 Vue.prototype.moment = moment
 
 Vue.config.productionTip = false
