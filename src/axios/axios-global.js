@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from '../store/index'
 
 const baseURL = process.env.VUE_APP_API
 // I was having CORS problems to access the API
@@ -14,6 +15,18 @@ const globalInstance = axios.create({
     'Access-Control-Allow-Origin': '*',
     'X-Requested-With': 'XMLHttpRequest'
   }
+})
+
+globalInstance.interceptors.request.use(config => {
+  store.dispatch('onLoading')
+  return config
+})
+
+globalInstance.interceptors.response.use(config => {
+  if (store.getters.loadingStatus) {
+    store.dispatch('offLoading')
+  }
+  return config
 })
 
 export default globalInstance

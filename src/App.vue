@@ -2,10 +2,12 @@
   <div id="app">
     <appHeader />
 
-    <b-container>
-      <router-view :key="$route.fullPath" />
-      <appBreadcrumb />
-    </b-container>
+    <b-overlay :show="isLoading" spinner-variant="green">
+      <b-container>
+        <router-view :key="$route.fullPath" />
+        <appBreadcrumb />
+      </b-container>
+    </b-overlay>
 
     <appFooter />
   </div>
@@ -21,6 +23,11 @@ export default {
     appHeader: Header,
     appBreadcrumb: Breadcrumb,
     appFooter: Footer
+  },
+  computed: {
+    isLoading() {
+      return this.$store.getters['loadingStatus']
+    }
   }
 }
 </script>
