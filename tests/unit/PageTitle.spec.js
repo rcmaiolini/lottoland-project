@@ -2,23 +2,24 @@ import { mount } from '@vue/test-utils'
 import PageTitle from '@/components/common/PageTitle.vue'
 
 describe('PageTitle', () => {
+  let wrapper
+  beforeAll(() => {
+    wrapper = mount(PageTitle)
+  })
+
   it('is a Vue instance', () => {
-    const wrapper = mount(PageTitle, {
-      propsData: {
-        title: 'Some Page Title'
-      }
+    wrapper.setProps({
+      title: 'Some Page Title'
     })
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   it('must render props.title when passed', () => {
     const titleValue = 'Some Page Title'
-    const wrapper = mount(PageTitle, {
-      propsData: {
-        title: titleValue
-      }
+    wrapper.setProps({
+      title: titleValue
     })
     expect(wrapper.html()).toContain(titleValue)
-    expect(wrapper.props().title).toBe(titleValue)
+    expect(wrapper.vm.title).toBe(titleValue)
   })
 })
