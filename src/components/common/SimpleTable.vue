@@ -6,8 +6,8 @@
       </b-tr>
     </b-thead>
     <b-tbody>
-      <b-tr v-for="(body, index) in tableBody" :key="index">
-        <b-td>{{ (index + 1) | toRoman }}</b-td>
+      <b-tr v-for="body in tableBody" :key="body.id">
+        <b-td>{{ body.id | toRoman }}</b-td>
         <b-td><nl2br tag="span" :text="body.match"/></b-td>
         <b-td>{{ body.winners | numeral('0,0') }}x</b-td>
         <b-td>€{{ body.prize | numeral('0,0.00') }}</b-td>

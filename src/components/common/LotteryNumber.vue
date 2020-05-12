@@ -5,10 +5,10 @@
       {{ jackpot.date }}
     </p>
     <ul class="lottery">
-      <li class="number" v-for="num in jackpot.numbers" :key="num">
+      <li class="number" v-for="(num, i) in jackpot.numbers" :key="i + num">
         {{ num }}
       </li>
-      <li class="number extra" v-for="ex in jackpot.extra" :key="ex">
+      <li class="number extra" v-for="(ex, i) in jackpot.extra" :key="i + ex">
         {{ ex }}
       </li>
     </ul>

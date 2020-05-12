@@ -53,6 +53,21 @@ import SimpleTable from '@/components/common/SimpleTable.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
+const match = [
+  '5 Numbers +\n2 Euronumbers',
+  '5 Numbers +\n1 Euronumber',
+  '5 Numbers +\n0 Euronumbers',
+  '4 Numbers +\n2 Euronumbers',
+  '4 Numbers +\n1 Euronumber',
+  '4 Numbers +\n0 Euronumber',
+  '3 Numbers +\n2 Euronumbers',
+  '2 Numbers +\n2 Euronumbers',
+  '3 Numbers +\n1 Euronumber',
+  '3 Numbers +\n0 Euronumbers',
+  '1 Number +\n2 Euronumbers',
+  '2 Numbers +\n1 Euronumber'
+]
+
 export default {
   components: {
     PageTitle,
@@ -86,18 +101,12 @@ export default {
     ...mapActions(['getWinningNumbers']),
     formatJackpotWinners() {
       this.jackpotWinners = this.getWinnersRank
-      this.jackpotWinners[0].match = '5 Numbers +\n2 Euronumbers'
-      this.jackpotWinners[1].match = '5 Numbers +\n1 Euronumber'
-      this.jackpotWinners[2].match = '5 Numbers +\n0 Euronumbers'
-      this.jackpotWinners[3].match = '4 Numbers +\n2 Euronumbers'
-      this.jackpotWinners[4].match = '4 Numbers +\n1 Euronumber'
-      this.jackpotWinners[5].match = '4 Numbers +\n0 Euronumber'
-      this.jackpotWinners[6].match = '3 Numbers +\n2 Euronumbers'
-      this.jackpotWinners[7].match = '2 Numbers +\n2 Euronumbers'
-      this.jackpotWinners[8].match = '3 Numbers +\n1 Euronumber'
-      this.jackpotWinners[9].match = '3 Numbers +\n0 Euronumbers'
-      this.jackpotWinners[10].match = '1 Number +\n2 Euronumbers'
-      this.jackpotWinners[11].match = '2 Numbers +\n1 Euronumber'
+
+      this.jackpotWinners.forEach((item, i) => {
+        item.id = i + 1
+        item.match = match[i]
+      })
+      console.log(this.jackpotWinners)
     }
   },
   computed: {
