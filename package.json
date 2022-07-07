@@ -13,7 +13,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.13.0",
     "core-js": "^3.6.4",
-    "moment": "^2.25.1",
+    "moment": "^2.29.4",
     "vue": "^2.6.11",
     "vue-nl2br": "^0.1.2",
     "vue-numeral-filter": "^1.1.1",
